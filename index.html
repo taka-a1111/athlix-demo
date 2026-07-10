@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-07-10a -->
+<!-- BUILD_TAG: 2026-07-10c -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>株式会社ATHLIX｜スポーツ経済圏で、人と組織の"見えない成長"を、仕組みに。</title>
@@ -64,6 +64,24 @@ section{scroll-margin-top:84px}
 .spark{position:absolute;width:6px;height:6px;background:#fff;border-radius:50%;box-shadow:0 0 8px 2px rgba(255,255,255,.8),0 0 16px 6px rgba(46,91,255,.6);pointer-events:none;animation:twinkle 3s ease-in-out infinite}
 @keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
 .athletes .sec-en,.contact .sec-en{text-shadow:0 0 18px rgba(46,91,255,.55)}
+
+
+/* ===== 動くサイバー背景（ヒーロー）===== */
+.hero-fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.hero-fx .beam{position:absolute;height:2px;width:40%;background:linear-gradient(90deg,transparent,rgba(90,140,255,.9),transparent);opacity:.7;filter:drop-shadow(0 0 6px rgba(46,91,255,.8));animation:beamMove 6s linear infinite}
+.hero-fx .beam.b1{top:24%;left:-40%;animation-delay:0s}
+.hero-fx .beam.b2{top:52%;left:-40%;width:55%;animation-delay:2.2s;animation-duration:7.5s}
+.hero-fx .beam.b3{top:74%;left:-40%;width:32%;animation-delay:4s;animation-duration:5.5s}
+@keyframes beamMove{0%{transform:translateX(0)}100%{transform:translateX(360%)}}
+.hero-fx .orb{position:absolute;border-radius:50%;filter:blur(60px);mix-blend-mode:screen;animation:orbFloat 12s ease-in-out infinite}
+.hero-fx .orb.o1{width:300px;height:300px;background:rgba(46,91,255,.55);top:-60px;right:8%;animation-delay:0s}
+.hero-fx .orb.o2{width:230px;height:230px;background:rgba(242,106,33,.4);bottom:-40px;left:6%;animation-delay:3s;animation-duration:15s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(24px,-20px) scale(1.08)}66%{transform:translate(-18px,16px) scale(.95)}}
+.hero-fx .pgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(90,140,255,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(90,140,255,.10) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse at 30% 45%,#000 0%,transparent 70%);animation:gridDrift 20s linear infinite}
+@keyframes gridDrift{0%{background-position:0 0}100%{background-position:52px 52px}}
+.hero-fx .particle{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(120,160,255,.9);animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(20px);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-120px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.hero-fx *{animation:none!important}}
 
 /* ===== reveal ===== */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
@@ -278,10 +296,12 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
   .str-num{font-size:48px}
   .str-fig{max-width:340px}
   .ath-grid{grid-template-columns:1fr}
-  .flow-steps{grid-template-columns:1fr;gap:26px;max-width:420px;margin-left:auto;margin-right:auto}
-  .fl-step{display:grid;grid-template-columns:74px 1fr;align-items:center;text-align:left;gap:20px;padding:22px 20px}
+  .flow-steps{grid-template-columns:1fr;gap:0;max-width:340px;margin-left:auto;margin-right:auto}
+  .fl-step{display:grid;grid-template-columns:74px 1fr;align-items:center;text-align:left;gap:20px;padding:14px 20px;position:relative}
   .fl-dot{margin:0}
-  .fl-step::after{right:auto;left:35px;top:auto;bottom:-20px;transform:rotate(135deg)}
+  .fl-step h3{text-align:left}
+  .fl-step::after{content:"";position:absolute;left:37px;right:auto;top:88px;bottom:auto;width:0;height:calc(100% - 74px);border-top:0;border-left:2px dashed #B9C6E8;transform:none}
+  .fl-step:last-child::after{display:none}
   .msg-grid{gap:44px}
   .msg-photo{max-width:340px;margin:0 auto}
   .ft-grid{grid-template-columns:1fr 1fr}
@@ -331,6 +351,19 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
+  <div class="hero-fx">
+    <div class="pgrid"></div>
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <span class="beam b1"></span>
+    <span class="beam b2"></span>
+    <span class="beam b3"></span>
+    <span class="particle" style="left:20%;bottom:10%;animation-duration:7s;animation-delay:0s"></span>
+    <span class="particle" style="left:38%;bottom:20%;animation-duration:9s;animation-delay:1.5s"></span>
+    <span class="particle" style="left:62%;bottom:6%;animation-duration:8s;animation-delay:3s"></span>
+    <span class="particle" style="left:78%;bottom:24%;animation-duration:10s;animation-delay:2s"></span>
+    <span class="particle" style="left:50%;bottom:14%;animation-duration:6.5s;animation-delay:4s"></span>
+  </div>
   <svg class="hero-slash" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <path d="M980 990 L1560 240" stroke="#F26A21" stroke-width="16" opacity=".85"/>
     <path d="M1090 990 L1640 320" stroke="#F26A21" stroke-width="5" opacity=".5"/>
@@ -650,7 +683,7 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
         <tr><th>SNS</th><td><a href="https://www.instagram.com/athlix.jp" target="_blank" rel="noopener" style="color:#D9541A;font-weight:700">Instagram @athlix.jp</a></td></tr>
       </table>
       <div class="co-map reveal d2">
-        <iframe src="https://maps.google.com/maps?q=35.629852,139.746613+(%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEATHLIX)&z=17&hl=ja&output=embed" title="株式会社ATHLIX 所在地マップ（東京都港区港南4-1-6）" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps?q=35.629852,139.746613&hl=ja&z=17&output=embed" title="株式会社ATHLIX 所在地マップ（東京都港区港南4-1-6）" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
@@ -737,7 +770,7 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
       </div>
     </div>
     <div class="ft-bottom">
-      <small>© 2026 ATHLIX Inc. All Rights Reserved. <span style="opacity:.45">BUILD_TAG: 2026-07-10a</span></small>
+      <small>© 2026 ATHLIX Inc. All Rights Reserved. <span style="opacity:.45">BUILD_TAG: 2026-07-10c</span></small>
       <a class="ig-link" href="https://www.instagram.com/athlix.jp" target="_blank" rel="noopener" aria-label="Instagram @athlix.jp">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
         @athlix.jp
