@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-07-10c -->
+<!-- BUILD_TAG: 2026-07-10d -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>株式会社ATHLIX｜スポーツ経済圏で、人と組織の"見えない成長"を、仕組みに。</title>
 <meta name="description" content="ATHLIXは、選手・保護者・指導者・企業をひとつにつなぎ、持続可能な成長を生むスポーツ経済圏を構築しています。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --orange:#F26A21;
@@ -28,6 +28,7 @@
   --line:#E1E7F2;
   --en:'Oswald',sans-serif;
   --jp:'Noto Sans JP',sans-serif;
+  --hand:'Klee One',cursive;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -36,7 +37,7 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 section{scroll-margin-top:84px}
-.wrap{max-width:1160px;margin:0 auto;padding:0 5vw}
+.wrap{max-width:1300px;margin:0 auto;padding:0 5vw}
 
 /* ===== 共通見出し ===== */
 .sec-wrap{position:relative;margin-bottom:34px}
@@ -116,7 +117,7 @@ body.nav-open .menu-btn span:nth-child(3){top:22px;transform:rotate(-45deg)}
 .hero-inner{position:relative;z-index:2;width:100%}
 .hero-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-weight:600;font-size:12px;letter-spacing:.32em;color:#7FA0FF;margin-bottom:24px}
 .hero-tag::before{content:"";width:34px;height:2px;background:var(--orange)}
-h1.hero-copy{font-size:clamp(30px,4.8vw,56px);font-weight:900;line-height:1.45;letter-spacing:.015em;text-shadow:0 2px 24px rgba(5,12,32,.5)}
+h1.hero-copy{font-size:clamp(34px,5.6vw,68px);font-weight:900;line-height:1.4;letter-spacing:.01em;text-shadow:0 2px 24px rgba(5,12,32,.5)}
 h1.hero-copy .em{color:#FF8B4D}
 .hero-sub{margin-top:24px;font-size:clamp(13.5px,1.35vw,16.5px);color:rgba(255,255,255,.88);font-weight:500;max-width:640px;text-shadow:0 1px 12px rgba(5,12,32,.5)}
 .hero-btns{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
@@ -148,10 +149,25 @@ h1.hero-copy .em{color:#FF8B4D}
 .eco-wrap svg{width:100%;height:auto;display:block}
 .about-note{max-width:640px;margin:40px auto 0;text-align:left;background:#fff;border-left:5px solid var(--blue);padding:22px 28px;font-weight:500;box-shadow:0 6px 22px rgba(20,34,74,.06)}
 .about-note strong{font-weight:900;background:linear-gradient(transparent 68%,var(--orange-pale) 68%)}
+.eco-sweep{transform-box:view-box;transform-origin:260px 285px;animation:ecoSweep 5s linear infinite}
+@keyframes ecoSweep{to{transform:rotate(360deg)}}
+.eco-pulse{transform-box:view-box;transform-origin:260px 285px;opacity:0;animation:ecoPulse 3s ease-out infinite}
+.eco-pulse.p2{animation-delay:1.5s}
+@keyframes ecoPulse{0%{r:62px;opacity:.5}100%{r:200px;opacity:0}}
+@media (prefers-reduced-motion:reduce){.eco-sweep,.eco-pulse{animation:none;opacity:0}}
 
 /* ===== BUSINESS（カードグリッド 3+2）===== */
-.business{padding:120px 0 130px;background:var(--paper)}
-.biz-list{margin-top:44px;display:flex;flex-direction:column;gap:16px;max-width:820px;margin-left:auto;margin-right:auto}
+.business{position:relative;padding:130px 0 140px;background:linear-gradient(180deg,var(--cyber-mid) 0%,var(--cyber-btm) 100%);color:#fff;overflow:hidden}
+.business .sec-title{color:#fff}
+.business .sec-bgword{color:#fff;opacity:.05}
+.business .sec-en{color:#7FA0FF}
+.business .biz-row{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.business .biz-row:hover{box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.business .biz-row h3{color:#fff}
+.business .biz-row .sub{color:rgba(255,255,255,.72)}
+.business .biz-icon{color:#fff}
+.business .biz-num{-webkit-text-stroke-color:#7FA0FF}
+.biz-list{margin-top:44px;display:flex;flex-direction:column;gap:16px;max-width:1000px;margin-left:auto;margin-right:auto}
 .biz-row{display:grid;grid-template-columns:70px 58px 1fr;gap:22px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 30px;position:relative;transition:transform .25s,box-shadow .25s;overflow:hidden}
 .biz-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#2E5BFF,#0A1A6E);opacity:0;transition:opacity .25s}
 .biz-row:hover{transform:translateX(4px);box-shadow:0 12px 30px rgba(20,34,74,.08)}
@@ -164,7 +180,7 @@ h1.hero-copy .em{color:#FF8B4D}
 
 /* ===== STRENGTH（番号＋テキスト＋図解の横並びカード）===== */
 .strength{position:relative;padding:130px 0 150px;background:var(--paper-warm);clip-path:polygon(0 0,100% 3.5vw,100% 100%,0 100%)}
-.str-item{display:grid;grid-template-columns:104px 1fr 320px;gap:38px;align-items:center;background:#fff;border:1px solid var(--line);padding:42px 44px;margin-top:30px;box-shadow:0 8px 26px rgba(20,34,74,.05)}
+.str-item{display:grid;grid-template-columns:92px 1fr 320px;gap:26px;align-items:center;background:#fff;border:1px solid var(--line);padding:42px 44px;margin-top:30px;box-shadow:0 8px 26px rgba(20,34,74,.05)}
 .str-item:first-of-type{margin-top:52px}
 .str-num{font-family:var(--en);font-weight:600;font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:1.6px var(--blue-bright)}
 .str-item h3{font-size:clamp(18px,2.1vw,23px);font-weight:900;line-height:1.6;margin-bottom:12px}
@@ -176,12 +192,13 @@ h1.hero-copy .em{color:#FF8B4D}
 
 /* ===== ATHLETES ===== */
 .athletes{position:relative;padding:140px 0;background:linear-gradient(180deg,var(--cyber-top) 0%,var(--cyber-mid) 48%,var(--cyber-btm) 100%);color:#fff;overflow:hidden}
-.ath-bg{position:absolute;left:-2vw;bottom:-1vw;font-family:var(--en);font-weight:700;font-size:clamp(90px,15vw,220px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.08);user-select:none;pointer-events:none}
+.ath-bg{position:absolute;left:-2vw;bottom:-1vw;font-family:var(--en);font-weight:700;font-size:clamp(90px,15vw,220px);line-height:1;color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.22);user-select:none;pointer-events:none}
 .athletes .sec-en{color:#fff}
 .athletes .sec-title{color:#fff}
 .ath-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;background:rgba(255,255,255,.14)}
 .ath-cell{background:var(--navy);padding:44px 34px;text-align:center}
-.ath-cell .en{font-family:var(--en);font-weight:600;font-size:13px;letter-spacing:.3em;color:var(--orange);margin-bottom:8px}
+.ath-no{font-family:var(--en);font-weight:600;font-size:38px;line-height:1;color:var(--orange);text-align:center;margin-bottom:14px;text-shadow:0 0 18px rgba(242,106,33,.35)}
+.ath-cell .en{font-family:var(--en);font-weight:600;font-size:13px;letter-spacing:.3em;color:var(--orange);text-align:center;margin:4px 0 16px}
 .ath-cell h3{font-size:22px;font-weight:900;margin-bottom:16px}
 .ath-cell p{font-size:14.5px;color:rgba(255,255,255,.78);text-align:left}
 .ath-icon{width:54px;height:54px;color:var(--orange);margin:0 auto 22px;border:1px solid rgba(255,255,255,.28);border-radius:50%;padding:12px}
@@ -193,17 +210,17 @@ h1.hero-copy .em{color:#FF8B4D}
 .message{padding:140px 0;background:var(--paper)}
 .msg-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start;margin-top:20px}
 .msg-photo{position:relative}
-.msg-photo img{width:100%;border-radius:2px}
-.msg-photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--blue);z-index:-1}
+.msg-photo img{width:100%;border-radius:14px}
+.msg-photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--blue);border-radius:14px;z-index:-1}
 .msg-body p{margin-bottom:1.4em;color:var(--ink-mid);font-weight:500}
 .msg-open{font-size:clamp(17px,1.9vw,21px);font-weight:900;color:var(--ink);line-height:2;margin-bottom:1.6em!important}
-.msg-tag{margin:34px 0 26px;padding:16px 22px;border-left:5px solid var(--blue);background:var(--paper-warm);font-size:clamp(18px,2.2vw,24px);font-weight:900;letter-spacing:.03em;color:var(--ink)}
+.msg-tag{margin:38px 0 30px;font-family:var(--hand);font-size:clamp(21px,2.8vw,32px);font-weight:600;letter-spacing:.02em;color:var(--navy);line-height:1.75;display:inline-block;padding-bottom:6px;background:linear-gradient(transparent 82%,rgba(46,91,255,.22) 82%)}
 .msg-sign{font-size:13px;color:var(--ink-mid);text-align:right}
-.msg-sign strong{display:block;font-size:21px;font-weight:900;color:var(--ink);margin-top:4px;letter-spacing:.1em}
+.msg-sign strong{display:block;font-family:var(--hand);font-size:26px;font-weight:600;color:var(--ink);margin-top:6px;letter-spacing:.08em}
 
 /* ===== FLOW（ボックス化した5ステップ）===== */
 .flow{position:relative;padding:130px 0 140px;background:linear-gradient(180deg,#F4F7FC 0%,#EAF0FB 100%)}
-.flow-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;max-width:900px;margin-left:auto;margin-right:auto}
+.flow-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;max-width:1040px;margin-left:auto;margin-right:auto}
 .fl-step{position:relative;text-align:center;padding:0 8px}
 .fl-step::after{content:"";position:absolute;right:-30%;top:37px;width:60%;border-top:2px dashed #B9C6E8;z-index:0}
 .fl-step:last-child::after{display:none}
@@ -419,6 +436,16 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
         <!-- 経済圏の大円 -->
         <circle cx="260" cy="285" r="205" fill="none"/>
         <circle cx="260" cy="285" r="205" fill="none" stroke="#B9C6E8" stroke-width="1.3" stroke-dasharray="3 6"/><circle cx="260" cy="285" r="150" fill="none" stroke="#D5DEF2" stroke-width="1" stroke-dasharray="2 6"/>
+        <!-- レーダー演出 -->
+        <defs>
+          <radialGradient id="ecoSweepGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#2E5BFF" stop-opacity=".30"/>
+            <stop offset="100%" stop-color="#2E5BFF" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <path class="eco-sweep" d="M260 285 L260 80 A205 205 0 0 1 421.5 158.8 Z" fill="url(#ecoSweepGrad)"/>
+        <circle class="eco-pulse" cx="260" cy="285" r="62" fill="none" stroke="#2E5BFF" stroke-width="1.4"/>
+        <circle class="eco-pulse p2" cx="260" cy="285" r="62" fill="none" stroke="#2E5BFF" stroke-width="1.4"/>
         <!-- 中央 ATHLIX -->
         <defs>
           <radialGradient id="core" cx="40%" cy="35%" r="75%">
@@ -483,13 +510,13 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
     <div class="str-item reveal">
       <div class="str-num">01</div>
       <div>
-        <h3>選手・保護者・指導者を、<span class="em">"一体で変えられる"</span></h3>
+        <h3>選手・保護者・指導者を、<br><span class="em">"一体で変えられる"</span></h3>
         <p>多くのサービスが「選手だけ」「指導者だけ」にアプローチする中、ATHLIXは三方向から同時に変化を起こします。単発ではなく、環境ごと変わる仕組みです。</p>
       </div>
       <div class="str-fig">
         <svg viewBox="0 0 360 250" role="img" aria-label="選手・保護者・指導者の3つの円が重なる三位一体の図">
           <circle cx="180" cy="98" r="72" fill="#F26A21" opacity=".22"/>
-          <circle cx="128" cy="164" r="72" fill="#14224A" opacity=".18"/>
+          <circle cx="128" cy="164" r="72" fill="#14224A" opacity=".30"/>
           <circle cx="232" cy="164" r="72" fill="#F26A21" opacity=".38"/>
           <g font-family="'Noto Sans JP',sans-serif" font-size="15" font-weight="700" fill="#1B2337" text-anchor="middle">
             <text x="180" y="66">選手</text>
@@ -506,7 +533,7 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
     <div class="str-item reveal">
       <div class="str-num">02</div>
       <div>
-        <h3>メンタル・習慣・思考を、<span class="em">"仕組み化"</span>している</h3>
+        <h3>メンタル・習慣・思考を、<br><span class="em">"仕組み化"</span>している</h3>
         <p>技術（How to play）ではなく思考力（How to think）にフォーカス。カリキュラム化・ワーク設計・継続プログラムで、「分かる」を「できる」に変えるまで設計しています。</p>
       </div>
       <div class="str-fig">
@@ -529,7 +556,7 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
     <div class="str-item reveal">
       <div class="str-num">03</div>
       <div>
-        <h3>技術ではなく、<span class="em">"見えない差"</span>を伸ばせる</h3>
+        <h3>技術ではなく、<br><span class="em">"見えない差"</span>を伸ばせる</h3>
         <p>技術・フィジカルはどこでも学べます。差がつくのは、メンタル・継続力・自己管理・思考力。この"見えない領域"を体系的に教えるのがATHLIXです。</p>
       </div>
       <div class="str-fig">
@@ -565,21 +592,24 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
     <div class="sec-wrap reveal"><span class="sec-bgword">TEAM</span><div class="sec-head"><span class="sec-en">ATHLETES</span></div><h2 class="sec-title">日本代表クラスのプロアスリートが、<br>講義・対話・実践で関わる。</h2></div>
     <div class="ath-grid">
       <div class="ath-cell reveal d1">
+        <div class="ath-no">01</div>
         <div class="ath-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5zM5 10v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></div>
-        <p class="en">01 LECTURE</p>
         <h3>講義</h3>
+        <p class="en">LECTURE</p>
         <p>セミナーに登壇し、経験談・思考・習慣・メンタル面を直接伝える。</p>
       </div>
       <div class="ath-cell reveal d2">
+        <div class="ath-no">02</div>
         <div class="ath-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-1.414-.586M7 8h2M5 4h9a2 2 0 012 2v6a2 2 0 01-2 2H9l-4 4V6a2 2 0 012-2z"/></svg></div>
-        <p class="en">02 DIALOGUE</p>
         <h3>対話</h3>
+        <p class="en">DIALOGUE</p>
         <p>会員の課題や悩みに対して、プロが直接アドバイスやフィードバックを行う。</p>
       </div>
       <div class="ath-cell reveal d3">
+        <div class="ath-no">03</div>
         <div class="ath-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="M9 22l1.2-6-2.2-2 1.6-4.5c.3-.9 1.2-1.5 2.2-1.4l2 .3c.7.1 1.3.5 1.7 1.1L17 12l3 1M12.5 13.5L15 22M4 13l3.4-1.6"/></svg></div>
-        <p class="en">03 PRACTICE</p>
         <h3>実践</h3>
+        <p class="en">PRACTICE</p>
         <p>プロが監修・参加する形で、習慣化チャレンジやトレーニング企画を実施。</p>
       </div>
     </div>
@@ -770,7 +800,7 @@ footer{background:var(--navy-deep);color:#fff;padding:80px 0 34px}
       </div>
     </div>
     <div class="ft-bottom">
-      <small>© 2026 ATHLIX Inc. All Rights Reserved. <span style="opacity:.45">BUILD_TAG: 2026-07-10c</span></small>
+      <small>© 2026 ATHLIX Inc. All Rights Reserved. <span style="opacity:.45">BUILD_TAG: 2026-07-10d</span></small>
       <a class="ig-link" href="https://www.instagram.com/athlix.jp" target="_blank" rel="noopener" aria-label="Instagram @athlix.jp">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
         @athlix.jp
